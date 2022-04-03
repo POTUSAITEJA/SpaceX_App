@@ -1,0 +1,31 @@
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+    background-color: black;
+}
+
+.tex{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 2%;
+}
+
+
+.imagesub{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}

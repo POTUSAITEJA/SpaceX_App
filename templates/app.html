@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block title %}Prediction page{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="static/app.css">
+
+<div class="img"></div>
+<div class="regform"><h1>Predict Firststage Landing</h1></div>
+<div class="main">
+<form class="row g-3" class="form" action="/sub" method="post">
+	<div class="col-md-6">
+		<h2>Payload</h2>
+	  <input type="number" class="form-control" id="inputEmail4" placeholder="Kgs" name="uikg" >
+	</div>
+	<div class="col-md-6">
+		<h2>Orbit</h2>
+		<div>
+		<select class="form-select" aria-label="Default select example" name="uiorbits">
+			<option selected>select the orbit to launch</option>
+			<option value="geo" name="uiorbit">GEO</option>
+			<option value="es-l1" name="uiorbit">ES-L1</option>
+			<option value="gto" name  ="uiorbit">GTO</option>
+			<option value="heo" name="uiorbit">HEO</option>
+			<option value="iss" name="uiorbit">ISS</option>
+			<option value="leo" name  ="uiorbit">LEO</option>
+			<option value="meo" name="uiorbit">MEO</option>
+			<option value="po" name="uiorbit">PO</option>
+			<option value="so" name="uiorbit">SO</option>
+			<option value="sso" name="uiorbit">SSO</option>
+			<option value="velo" name="uiorbit">VELO</option>
+		</select>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<h2>Flights</h2>
+		<div class="switch-field">
+			<input type="radio" id="radio-bhk-1" name="uiflight" value="1.0"/>
+			<label for="radio-bhk-1">1</label>
+			<input type="radio" id="radio-bhk-2" name="uiflight" value="2.0" checked/>
+			<label for="radio-bhk-2">2</label>
+			<input type="radio" id="radio-bhk-3" name="uiflight" value="3.0"/>
+			<label for="radio-bhk-3">3</label>
+			<input type="radio" id="radio-bhk-4" name="uiflight" value="4.0"/>
+			<label for="radio-bhk-4">4</label>
+			<input type="radio" id="radio-bhk-5" name="uiflight" value="5.0"/>
+			<label for="radio-bhk-5">5</label>
+		</div>
+	</div>
+	<div class="col-md-4">	
+		<h2>Block</h2>
+		<div class="switch-field">
+			<input type="radio" id="radio-block-1" name="uiBlock" value="1.0"/>
+			<label for="radio-block-1">1</label>
+			<input type="radio" id="radio-block-2" name="uiBlock" value="2.0" checked/>
+			<label for="radio-block-2">2</label>
+			<input type="radio" id="radio-block-3" name="uiBlock" value="3.0"/>
+			<label for="radio-block-3">3</label>
+			<input type="radio" id="radio-block-4" name="uiBlock" value="4.0"/>
+			<label for="radio-block-4">4</label>
+			<input type="radio" id="radio-block-5" name="uiBlock" value="5.0"/>
+			<label for="radio-block-5">5</label>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<h2>ReusedCount</h2>
+		<div class="switch-field">
+			<input type="radio" id="radio-reusedcount-1" name="uireusedcount" value="1.0"/>
+			<label for="radio-reusedcount-1">1</label>
+			<input type="radio" id="radio-reusedcount-2" name="uireusedcount" value="2.0" checked/>
+			<label for="radio-reusedcount-2">2</label>
+			<input type="radio" id="radio-reusedcount-3" name="uireusedcount" value="3.0"/>
+			<label for="radio-reusedcount-3">3</label>
+			<input type="radio" id="radio-reusedcount-4" name="uireusedcount" value="4.0"/>
+			<label for="radio-reusedcount-4">4</label>
+			<input type="radio" id="radio-reusedcount-5" name="uireusedcount" value="5.0"/>
+			<label for="radio-reusedcount-5">5</label>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<h2>Reused</h2>
+		<div class="switch-field">
+			<input type="radio" id="radio-reused-1" name="uireused" value="reused_true"/>
+			<label for="radio-reused-1">Yes</label>
+			<input type="radio" id="radio-reused-2" name="uireused" value="reused_false" checked/>
+			<label for="radio-reused-2">No</label>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<h2>Gridfins</h2>
+		<div class="switch-field">
+			<input type="radio" id="radio-Gridfins-1" name="uigridfins" value="gridfins_true"/>
+			<label for="radio-Gridfins-1">Yes</label>
+			<input type="radio" id="radio-Gridfins-2" name="uigridfins" value="gridfins_false" checked/>
+			<label for="radio-Gridfins-2">No</label>
+		</div>	
+	</div>
+	<div class="col-md-4">
+		<h2>Legs</h2>
+		<div class="switch-field">
+			<input type="radio" id="radio-legs-1" name="uilegs" value="legs_true"/>
+			<label for="radio-legs-1">Yes</label>
+			<input type="radio" id="radio-legs-2" name="uilegs" value="legs_false" checked/>
+			<label for="radio-legs-2">No</label>
+		</div>		
+	</div>
+	<div class="col-6">
+		<h2>Landingpad</h2>
+		<div>
+		<select class="form-select" aria-label="Default select example" name="uilandingpad">
+			<option selected>select landing pad type</option>
+			<option value="5e9e3032383ecb267a34e7c7" name="uilandingpad">Parachute</option>
+			<option value="5e9e3032383ecb554034e7c9" name="uilandingpad">Ocean pad</option>
+			<option value="5e9e3032383ecb6bb234e7ca" name  ="uilandingpad">Droneship pad</option>
+			<option value="5e9e3032383ecb761634e7cb" name="uilandingpad">Ground</option>
+			<option value="5e9e3033383ecbb9e534e7cc" name="uilandingpad">Ground pad</option>
+		</select>
+		</div>
+	</div>
+	<div class="col-6">
+		<h2>Launchsite</h2>
+		<div>
+		<select class="form-select" aria-label="Default select example" name="uilaunchsite">
+			<option selected>select launchsite</option>
+			<option value="ccafs slc 40" name="uilaunchsite">Cape Canaveral Space Force Station, Florida.</option>
+			<option value="ksc lc 39a" name="uilaunchsite"> John F. Kennedy Space Center,Florida</option>
+			<option value="vafb slc 4e" name  ="uilaunchsite">Vandenberg Space Force Base, California</option>
+		</select>
+		</div>
+	</div>
+	<div class="col-12" id="but">
+		<button type="submit" class="">Predict Launch</button>
+	</div>
+  </form>
+</div>
+
+
+{% endblock %}

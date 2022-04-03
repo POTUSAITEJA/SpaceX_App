@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{%from "components/card.html" import card %}
+{%from "components/footer.html" import footer %}
+{% block title %}Home page{% endblock %}
+
+{% block content %}
+<section class="Homepagestart">
+<div class="home">
+  <img src="{{ url_for('static', filename='Rocket sep.jpg') }}" alt="" class="d-inline-block align-text-top">
+  <!--
+  <video autoplay muted loop id="myVideo">
+    <source src="{{ url_for('static', filename='rocket1.webm') }}" type="video/mp4">
+  </video>
+  -->
+  <div class="overlay"></div>
+  <div class="hometext">
+    <h1>SPACE <span>TRAVEL</span></h1>
+    <h3>A space exploration game</h3>
+    <p>Humans were wondering about space for centuries but we have only been able to visit space with the advancement of science in the last century. Space is a giant leap for humankind.</p>
+    <a href ="#">Explore</a>
+  </div>
+</div>
+</section>
+<section class="aboutme">
+  <h1 class="heading" id="about_me">
+    The begining of the journey
+  </h1>
+  <h5>A little space for everyone </h5>
+</section>
+
+<h1 class="space_heading" id="spacexdata">
+  SpaceX Falcon 9 launch data
+</h1>
+<main class="main">
+  <section class="left section">
+    <p>SpaceX advertises Falcon 9 rocket launches on its website, with a cost of 62 million dollars; other providers cost upward of 165 million dollars each, much of the savings is because SpaceX can reuse the first stage. Therefore if we can determine if the first stage will land, we can determine the cost of a launch.</p>
+  </section>
+  <section class="right section">
+    <video autoplay muted loop id="myVideo">
+      <source src="{{ url_for('static', filename='Falcon9.webm') }}" type="video/mp4">
+  </section>
+</main>
+
+<main class="main1">
+  <section class="leftsection">
+    <a class="datav">
+      <img src="{{ url_for('static', filename='sucessrate.png') }}" alt=""  aline="left" width="550" height="400"  class="d-inline-block align-text-top">
+    </a>
+  </section>
+  <section class="rightsection">
+    <a class="datav">
+      <img src="{{ url_for('static', filename='sucess.png') }}" alt="" aline="right" width="550" height="400" class="d-inline-block align-text-top">
+    </a>
+  </section>
+</main>
+
+<main class="main2">
+  <section class="leftsection">
+    <a class="datav">
+      <img src="{{ url_for('static', filename='orbitpayload.jpg') }}" alt=""  aline="left" width="550" height="400"  class="d-inline-block align-text-top">
+    </a>
+  </section>
+  <section class="rightsection">
+    <a class="datav">
+      <img src="{{ url_for('static', filename='orbits.jpg') }}" alt="" aline="right" width="550" height="400" class="d-inline-block align-text-top">
+    </a>
+  </section>
+</main>
+
+<main class="main4">
+  <section class="leftsection">
+    <a class="datav">
+      <img src="{{ url_for('static', filename='payloadtoorbit.png') }}" alt=""  aline="left" width="550" height="400"  class="d-inline-block align-text-top">
+    </a>
+  </section>
+  <section class="rightsection">
+    <a class="datav">
+      <img src="{{ url_for('static', filename='rocketheight.png') }}" alt="" aline="right" width="550" height="400" class="d-inline-block align-text-top">
+    </a>
+  </section>
+</main>
+
+<main class="main3">
+  <section class="leftsection">
+    <a class="datav">
+      <img src="{{ url_for('static', filename='payloadsite.jpg') }}" alt=""  aline="left" width="1110" height="300"  class="d-inline-block align-text-top">
+    </a>
+    <a class="launchsite" href ="/map">LaunchSite Map</a>
+  </section>
+</main>
+
+{% endblock %}
