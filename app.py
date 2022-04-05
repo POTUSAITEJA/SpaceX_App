@@ -137,6 +137,10 @@ def map():
 def predict_Launch():
     return render_template("app.html")
 
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
 if __name__ == "__main__":
     load_saved_artificates()
     print(get_orbit_names())

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Contact page{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+      <div class="col col-lg-6 tech">
+        <h1>Technologies used</h1>
+        <img src="{{ url_for('static', filename='tools.jpg') }}" alt="" width="400" height="300">
+        </div>
+      <div class="col col-lg-3 con">
+        <h1>Contact</h1>
+    
+        <img src="{{ url_for('static', filename='photo.jpg') }}" alt="" width="200" height="250">
+      </div>
+      <div class="col col-lg-3 nam">
+          <h2>POTU SAI TEJA</h2>
+          <h6>Hannover,Germany</h6>
+          <p>saitejareddypotu@gmail.com</p>
+          <img src="{{ url_for('static', filename='qrdetails.png') }}" alt="" width="200" height="200">
+      </div>
+    </div>
+  </div>
+{% endblock %}
